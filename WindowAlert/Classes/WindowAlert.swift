@@ -198,9 +198,16 @@ public class WindowAlert {
         }
     }
     
+    /**
+     Ensure we inherit the status bar style of the application.
+     */
+    private class WindowAlertViewController: UIViewController {
+        override var preferredStatusBarStyle: UIStatusBarStyle { return UIApplication.shared.statusBarStyle }
+    }
+    
     private var internalWindow: TapAwareWindow?
     private var alertController: UIAlertController?
-    private let rootViewController = UIViewController()
+    private let rootViewController = WindowAlertViewController()
     
     private var internalWindowTintColor: UIColor?
     private var internalWindowFrame: CGRect

@@ -343,7 +343,7 @@ public class WindowAlert {
      Removes window from window hierarchy and dismisses UIAlertController.
      - returns: True if was hidden successfully, false if tried to hide already hidden alert.
      */
-    public func hide() -> Bool {
+    @discardableResult public func hide() -> Bool {
         //if WindowAlert is already hidden, no need to proceed
         if(!visible) {
             return false
